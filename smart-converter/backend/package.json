@@ -1,0 +1,46 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "node comprehensive-api.test.js",
+    "test:comprehensive": "node comprehensive-api.test.js",
+    "test:validation": "node validation-test.js",
+    "test:runner": "node run-comprehensive-tests.js",
+    "test:health": "node -e \"require('./comprehensive-api.test.js').testHealthEndpoint().then(console.log)\"",
+    "test:conversion": "node -e \"require('./comprehensive-api.test.js').testConversionAPI().then(console.log)\"",
+    "test:bug-report": "node -e \"require('./comprehensive-api.test.js').testBugReportAPI().then(console.log)\"",
+    "test:user-management": "node -e \"require('./comprehensive-api.test.js').testUserCreationWithoutImage().then(console.log)\"",
+    "test:auth": "node -e \"require('./comprehensive-api.test.js').testUserLogin().then(console.log)\"",
+    "test:database": "node -e \"require('./comprehensive-api.test.js').testDatabaseConnection().then(console.log)\"",
+    "test:joi-schemas": "node -e \"require('./validation-test.js').runValidationTests().then(console.log)\"",
+    "test:joi-manual": "node test-joi-manual.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "google-auth-library": "^10.1.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "mysql2": "^3.14.2",
+    "nodemailer": "^7.0.5",
+    "sequelize": "^6.37.7",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4"
+  }
+}
